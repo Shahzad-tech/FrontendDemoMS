@@ -1,0 +1,15 @@
+a:hover {
+    cursor:pointer;
+   }
+.leftcol{
+    background-color: bisque;
+}
+input{
+    /* border: none; */
+    border-bottom: 1px solid goldenrod;
+}
+small{
+    color: red;
+}
+
+
