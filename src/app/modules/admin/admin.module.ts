@@ -18,7 +18,6 @@ import { NavbarModule } from '../navbar/navbar.module';
      TeacherComponent,
 
     StudentComponent,
-
      AdminDashboardComponent,
      UpdateStudentComponent,
   ],
