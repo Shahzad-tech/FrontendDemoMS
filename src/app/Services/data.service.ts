@@ -35,4 +35,10 @@ export class DataService {
     return this.http.get(url)
   }
 
+  getStudentDataByIdentityId(id:any){
+    let url = this.baseUrl + `/Student/GetStudentByIdentity/${id}`
+    return this.http.get(url)
+  }
+
+
 }

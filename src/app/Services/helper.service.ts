@@ -12,6 +12,8 @@ export class HelperService {
   
   Role = new BehaviorSubject('');
   Email = new BehaviorSubject('');
+  UserID:any;
+  
 
  getDecodedAccessToken(token:string):any{
    try{
@@ -25,6 +27,7 @@ export class HelperService {
  setlocalStorage(data:any){
    const tokenInfo = this.getDecodedAccessToken(data);
    localStorage.setItem("id_token",data)
+   this.UserID = tokenInfo.UserID;
    // this.Role = tokenInfo.role
     this.Email.next(tokenInfo.UserEmail);
     this.Role.next(tokenInfo.role);
@@ -32,31 +35,35 @@ export class HelperService {
     localStorage.setItem("Email", tokenInfo.UserEmail)
  }
 
- getUserRoleBs(){
+getUserRoleBs(){
    return this.Role
  }
-  setUserRoleBs(latestValue:any){
+setUserRoleBs(latestValue:any){
     return this.Role.next(latestValue) 
   }
-  setUserEmailBs(latestValue:any){
+setUserEmailBs(latestValue:any){
    return this.Email.next(latestValue)
   }
 
- getUserEmailBs(){
+getUserEmailBs(){
    return this.Email
- }
+}
+
+getUserId(){
+  return this.getDecodedAccessToken(localStorage.getItem("id_token")!).UserID
+} 
 
 
- getUserRole(){
+getUserRole(){
    return localStorage.getItem("Role")
- }
+}
  
- getUserEmail(){
+getUserEmail(){
    return localStorage.getItem("Email")
- }
+}
 
- logout(){
+logout(){
    localStorage.clear();
- }
+}
 
 }

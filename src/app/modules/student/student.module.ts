@@ -4,6 +4,7 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
 import { StudentRoutingModule } from './student-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarModule } from '../navbar/navbar.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NavbarModule } from '../navbar/navbar.module';
     CommonModule,
     StudentRoutingModule,
     NavbarModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ]
 })
 export class StudentModule { }
