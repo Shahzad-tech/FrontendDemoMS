@@ -16,7 +16,9 @@ import { NavbarModule } from '../navbar/navbar.module';
 @NgModule({
   declarations: [
      TeacherComponent,
-     StudentComponent,
+
+    StudentComponent,
+
      AdminDashboardComponent,
      UpdateStudentComponent,
   ],
